@@ -496,7 +496,7 @@ h2.pin{ max-width:24ch; }
 <!-- ============ COUNTDOWN BAR ============ -->
 <div class="bar">
   <div class="shell bar-inner">
-    <span class="bar-label">Training starts in</span>
+    <span class="bar-label" id="bar-label">Training starts in</span>
     <div class="clock" id="clock" aria-live="off">
       <div><b data-d>--</b><span>Days</span></div>
       <div><b data-h>--</b><span>Hrs</span></div>
@@ -531,12 +531,10 @@ h2.pin{ max-width:24ch; }
 
         The session dropdown applies a Kit TAG, not a custom field:
           23209526 = Monday, Sept 21, 12:00 pm ET
-          23209507 = Wednesday, Sept 23, 1:00 pm ET
+          23257867 = Wednesday, Sept 23, 1:00 pm ET
 
-        HEADS UP: tag 23209507 was originally created for the Sept 17
-        session. The page now shows Sept 23 against that same tag ID.
-        Rename that tag inside Kit to match, or people who pick Sept 23
-        get tagged for a session that no longer exists.
+        Tag 23209507 was the old Sept 17 session and is no longer used
+        anywhere on this page.
         If those tags get rebuilt in Kit, update the option values
         in all four forms.
 
@@ -552,7 +550,7 @@ h2.pin{ max-width:24ch; }
             data-uid="ea49b0e478"
             data-format="inline"
             data-version="5"
-            data-options="{&quot;settings&quot;:{&quot;after_subscribe&quot;:{&quot;action&quot;:&quot;message&quot;,&quot;success_message&quot;:&quot;Success! Now check your email to confirm your subscription.&quot;,&quot;redirect_url&quot;:&quot;&quot;},&quot;analytics&quot;:{&quot;google&quot;:null,&quot;fathom&quot;:null,&quot;facebook&quot;:null,&quot;segment&quot;:null,&quot;pinterest&quot;:null,&quot;sparkloop&quot;:null,&quot;googletagmanager&quot;:null},&quot;modal&quot;:{&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15},&quot;powered_by&quot;:{&quot;show&quot;:false,&quot;url&quot;:&quot;https://kit.com/features/forms?utm_campaign=poweredby&amp;utm_content=form&amp;utm_medium=referral&amp;utm_source=dynamic&quot;},&quot;recaptcha&quot;:{&quot;enabled&quot;:false},&quot;return_visitor&quot;:{&quot;action&quot;:&quot;show&quot;,&quot;custom_content&quot;:&quot;&quot;},&quot;slide_in&quot;:{&quot;display_in&quot;:&quot;bottom_right&quot;,&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15},&quot;sticky_bar&quot;:{&quot;display_in&quot;:&quot;top&quot;,&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15}},&quot;version&quot;:&quot;5&quot;}">
+            data-options="{&quot;settings&quot;:{&quot;after_subscribe&quot;:{&quot;action&quot;:&quot;message&quot;,&quot;success_message&quot;:&quot;You're in. Your join link is on its way to your inbox. Add it to your calendar so you don't lose track of it.&quot;,&quot;redirect_url&quot;:&quot;&quot;},&quot;analytics&quot;:{&quot;google&quot;:null,&quot;fathom&quot;:null,&quot;facebook&quot;:null,&quot;segment&quot;:null,&quot;pinterest&quot;:null,&quot;sparkloop&quot;:null,&quot;googletagmanager&quot;:null},&quot;modal&quot;:{&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15},&quot;powered_by&quot;:{&quot;show&quot;:false,&quot;url&quot;:&quot;https://kit.com/features/forms?utm_campaign=poweredby&amp;utm_content=form&amp;utm_medium=referral&amp;utm_source=dynamic&quot;},&quot;recaptcha&quot;:{&quot;enabled&quot;:false},&quot;return_visitor&quot;:{&quot;action&quot;:&quot;show&quot;,&quot;custom_content&quot;:&quot;&quot;},&quot;slide_in&quot;:{&quot;display_in&quot;:&quot;bottom_right&quot;,&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15},&quot;sticky_bar&quot;:{&quot;display_in&quot;:&quot;top&quot;,&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15}},&quot;version&quot;:&quot;5&quot;}">
 
         <ul class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert"></ul>
 
@@ -574,7 +572,7 @@ h2.pin{ max-width:24ch; }
               <select id="ck-session-1" class="formkit-select" data-element="tags-select" name="tags[]" required>
                 <option value="">Choose a session</option>
                 <option value="23209526">Monday, September 21 at 12:00 pm ET</option>
-                <option value="23209507">Wednesday, September 23 at 1:00 pm ET</option>
+                <option value="23257867">Wednesday, September 23 at 1:00 pm ET</option>
               </select>
             </div>
           </div>
@@ -620,7 +618,7 @@ h2.pin{ max-width:24ch; }
             data-uid="ea49b0e478"
             data-format="inline"
             data-version="5"
-            data-options="{&quot;settings&quot;:{&quot;after_subscribe&quot;:{&quot;action&quot;:&quot;message&quot;,&quot;success_message&quot;:&quot;Success! Now check your email to confirm your subscription.&quot;,&quot;redirect_url&quot;:&quot;&quot;},&quot;analytics&quot;:{&quot;google&quot;:null,&quot;fathom&quot;:null,&quot;facebook&quot;:null,&quot;segment&quot;:null,&quot;pinterest&quot;:null,&quot;sparkloop&quot;:null,&quot;googletagmanager&quot;:null},&quot;modal&quot;:{&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15},&quot;powered_by&quot;:{&quot;show&quot;:false,&quot;url&quot;:&quot;https://kit.com/features/forms?utm_campaign=poweredby&amp;utm_content=form&amp;utm_medium=referral&amp;utm_source=dynamic&quot;},&quot;recaptcha&quot;:{&quot;enabled&quot;:false},&quot;return_visitor&quot;:{&quot;action&quot;:&quot;show&quot;,&quot;custom_content&quot;:&quot;&quot;},&quot;slide_in&quot;:{&quot;display_in&quot;:&quot;bottom_right&quot;,&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15},&quot;sticky_bar&quot;:{&quot;display_in&quot;:&quot;top&quot;,&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15}},&quot;version&quot;:&quot;5&quot;}">
+            data-options="{&quot;settings&quot;:{&quot;after_subscribe&quot;:{&quot;action&quot;:&quot;message&quot;,&quot;success_message&quot;:&quot;You're in. Your join link is on its way to your inbox. Add it to your calendar so you don't lose track of it.&quot;,&quot;redirect_url&quot;:&quot;&quot;},&quot;analytics&quot;:{&quot;google&quot;:null,&quot;fathom&quot;:null,&quot;facebook&quot;:null,&quot;segment&quot;:null,&quot;pinterest&quot;:null,&quot;sparkloop&quot;:null,&quot;googletagmanager&quot;:null},&quot;modal&quot;:{&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15},&quot;powered_by&quot;:{&quot;show&quot;:false,&quot;url&quot;:&quot;https://kit.com/features/forms?utm_campaign=poweredby&amp;utm_content=form&amp;utm_medium=referral&amp;utm_source=dynamic&quot;},&quot;recaptcha&quot;:{&quot;enabled&quot;:false},&quot;return_visitor&quot;:{&quot;action&quot;:&quot;show&quot;,&quot;custom_content&quot;:&quot;&quot;},&quot;slide_in&quot;:{&quot;display_in&quot;:&quot;bottom_right&quot;,&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15},&quot;sticky_bar&quot;:{&quot;display_in&quot;:&quot;top&quot;,&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15}},&quot;version&quot;:&quot;5&quot;}">
 
         <ul class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert"></ul>
 
@@ -642,7 +640,7 @@ h2.pin{ max-width:24ch; }
               <select id="ck-session-2" class="formkit-select" data-element="tags-select" name="tags[]" required>
                 <option value="">Choose a session</option>
                 <option value="23209526">Monday, September 21 at 12:00 pm ET</option>
-                <option value="23209507">Wednesday, September 23 at 1:00 pm ET</option>
+                <option value="23257867">Wednesday, September 23 at 1:00 pm ET</option>
               </select>
             </div>
           </div>
@@ -711,7 +709,7 @@ h2.pin{ max-width:24ch; }
               data-uid="ea49b0e478"
               data-format="inline"
               data-version="5"
-              data-options="{&quot;settings&quot;:{&quot;after_subscribe&quot;:{&quot;action&quot;:&quot;message&quot;,&quot;success_message&quot;:&quot;Success! Now check your email to confirm your subscription.&quot;,&quot;redirect_url&quot;:&quot;&quot;},&quot;analytics&quot;:{&quot;google&quot;:null,&quot;fathom&quot;:null,&quot;facebook&quot;:null,&quot;segment&quot;:null,&quot;pinterest&quot;:null,&quot;sparkloop&quot;:null,&quot;googletagmanager&quot;:null},&quot;modal&quot;:{&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15},&quot;powered_by&quot;:{&quot;show&quot;:false,&quot;url&quot;:&quot;https://kit.com/features/forms?utm_campaign=poweredby&amp;utm_content=form&amp;utm_medium=referral&amp;utm_source=dynamic&quot;},&quot;recaptcha&quot;:{&quot;enabled&quot;:false},&quot;return_visitor&quot;:{&quot;action&quot;:&quot;show&quot;,&quot;custom_content&quot;:&quot;&quot;},&quot;slide_in&quot;:{&quot;display_in&quot;:&quot;bottom_right&quot;,&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15},&quot;sticky_bar&quot;:{&quot;display_in&quot;:&quot;top&quot;,&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15}},&quot;version&quot;:&quot;5&quot;}">
+              data-options="{&quot;settings&quot;:{&quot;after_subscribe&quot;:{&quot;action&quot;:&quot;message&quot;,&quot;success_message&quot;:&quot;You're in. Your join link is on its way to your inbox. Add it to your calendar so you don't lose track of it.&quot;,&quot;redirect_url&quot;:&quot;&quot;},&quot;analytics&quot;:{&quot;google&quot;:null,&quot;fathom&quot;:null,&quot;facebook&quot;:null,&quot;segment&quot;:null,&quot;pinterest&quot;:null,&quot;sparkloop&quot;:null,&quot;googletagmanager&quot;:null},&quot;modal&quot;:{&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15},&quot;powered_by&quot;:{&quot;show&quot;:false,&quot;url&quot;:&quot;https://kit.com/features/forms?utm_campaign=poweredby&amp;utm_content=form&amp;utm_medium=referral&amp;utm_source=dynamic&quot;},&quot;recaptcha&quot;:{&quot;enabled&quot;:false},&quot;return_visitor&quot;:{&quot;action&quot;:&quot;show&quot;,&quot;custom_content&quot;:&quot;&quot;},&quot;slide_in&quot;:{&quot;display_in&quot;:&quot;bottom_right&quot;,&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15},&quot;sticky_bar&quot;:{&quot;display_in&quot;:&quot;top&quot;,&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15}},&quot;version&quot;:&quot;5&quot;}">
 
           <ul class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert"></ul>
 
@@ -733,7 +731,7 @@ h2.pin{ max-width:24ch; }
                 <select id="ck-session-3" class="formkit-select" data-element="tags-select" name="tags[]" required>
                   <option value="">Choose a session</option>
                   <option value="23209526">Monday, September 21 at 12:00 pm ET</option>
-                  <option value="23209507">Wednesday, September 23 at 1:00 pm ET</option>
+                  <option value="23257867">Wednesday, September 23 at 1:00 pm ET</option>
                 </select>
               </div>
             </div>
@@ -779,7 +777,7 @@ h2.pin{ max-width:24ch; }
             data-uid="ea49b0e478"
             data-format="inline"
             data-version="5"
-            data-options="{&quot;settings&quot;:{&quot;after_subscribe&quot;:{&quot;action&quot;:&quot;message&quot;,&quot;success_message&quot;:&quot;Success! Now check your email to confirm your subscription.&quot;,&quot;redirect_url&quot;:&quot;&quot;},&quot;analytics&quot;:{&quot;google&quot;:null,&quot;fathom&quot;:null,&quot;facebook&quot;:null,&quot;segment&quot;:null,&quot;pinterest&quot;:null,&quot;sparkloop&quot;:null,&quot;googletagmanager&quot;:null},&quot;modal&quot;:{&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15},&quot;powered_by&quot;:{&quot;show&quot;:false,&quot;url&quot;:&quot;https://kit.com/features/forms?utm_campaign=poweredby&amp;utm_content=form&amp;utm_medium=referral&amp;utm_source=dynamic&quot;},&quot;recaptcha&quot;:{&quot;enabled&quot;:false},&quot;return_visitor&quot;:{&quot;action&quot;:&quot;show&quot;,&quot;custom_content&quot;:&quot;&quot;},&quot;slide_in&quot;:{&quot;display_in&quot;:&quot;bottom_right&quot;,&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15},&quot;sticky_bar&quot;:{&quot;display_in&quot;:&quot;top&quot;,&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15}},&quot;version&quot;:&quot;5&quot;}">
+            data-options="{&quot;settings&quot;:{&quot;after_subscribe&quot;:{&quot;action&quot;:&quot;message&quot;,&quot;success_message&quot;:&quot;You're in. Your join link is on its way to your inbox. Add it to your calendar so you don't lose track of it.&quot;,&quot;redirect_url&quot;:&quot;&quot;},&quot;analytics&quot;:{&quot;google&quot;:null,&quot;fathom&quot;:null,&quot;facebook&quot;:null,&quot;segment&quot;:null,&quot;pinterest&quot;:null,&quot;sparkloop&quot;:null,&quot;googletagmanager&quot;:null},&quot;modal&quot;:{&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15},&quot;powered_by&quot;:{&quot;show&quot;:false,&quot;url&quot;:&quot;https://kit.com/features/forms?utm_campaign=poweredby&amp;utm_content=form&amp;utm_medium=referral&amp;utm_source=dynamic&quot;},&quot;recaptcha&quot;:{&quot;enabled&quot;:false},&quot;return_visitor&quot;:{&quot;action&quot;:&quot;show&quot;,&quot;custom_content&quot;:&quot;&quot;},&quot;slide_in&quot;:{&quot;display_in&quot;:&quot;bottom_right&quot;,&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15},&quot;sticky_bar&quot;:{&quot;display_in&quot;:&quot;top&quot;,&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15}},&quot;version&quot;:&quot;5&quot;}">
 
         <ul class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert"></ul>
 
@@ -801,7 +799,7 @@ h2.pin{ max-width:24ch; }
               <select id="ck-session-4" class="formkit-select" data-element="tags-select" name="tags[]" required>
                 <option value="">Choose a session</option>
                 <option value="23209526">Monday, September 21 at 12:00 pm ET</option>
-                <option value="23209507">Wednesday, September 23 at 1:00 pm ET</option>
+                <option value="23257867">Wednesday, September 23 at 1:00 pm ET</option>
               </select>
             </div>
           </div>
@@ -825,41 +823,93 @@ h2.pin{ max-width:24ch; }
 </footer>
 
 <script>
-/* ---- Countdown to the first session: Mon Sept 21, 2026 12:00pm ET ---- */
-/* Change this one line if the date moves. -04:00 = Eastern Daylight Time. */
-var TARGET = new Date('2026-09-21T12:00:00-04:00').getTime();
+/* ---- Session countdown ----------------------------------------------
+   Rolls forward automatically:
+     before Sept 21  -> counts down to Monday
+     during a session -> shows "live right now"
+     after Sept 21   -> counts down to Wednesday
+     after Sept 23   -> the whole bar hides itself
+   Update SESSIONS and everything else follows. -04:00 is Eastern
+   Daylight Time; if a session ever lands after early November, that
+   offset becomes -05:00. ------------------------------------------ */
+var SESSIONS = [
+  { tag:'23209526', label:"Monday's session starts in",    live:"Monday's session is live right now", start:'2026-09-21T12:00:00-04:00' },
+  { tag:'23257867', label:"Wednesday's session starts in", live:"Wednesday's session is live right now", start:'2026-09-23T13:00:00-04:00' }
+];
+var RUNS_FOR_MS = 75 * 60 * 1000;   // treat a session as live for 75 minutes
 
+var bar   = document.querySelector('.bar');
+var label = document.getElementById('bar-label');
 var clock = document.getElementById('clock');
 var elD = clock.querySelector('[data-d]'),
     elH = clock.querySelector('[data-h]'),
     elM = clock.querySelector('[data-m]'),
     elS = clock.querySelector('[data-s]');
 
+SESSIONS.forEach(function(s){ s.startMs = new Date(s.start).getTime(); });
+
 function pad(n){ return n < 10 ? '0' + n : '' + n; }
 
+function currentSession(now){
+  for (var i = 0; i < SESSIONS.length; i++){
+    if (now < SESSIONS[i].startMs + RUNS_FOR_MS) return SESSIONS[i];
+  }
+  return null;
+}
+
 function tick(){
-  var diff = TARGET - Date.now();
-  if (diff <= 0){
-    elD.textContent = '00'; elH.textContent = '00';
-    elM.textContent = '00'; elS.textContent = '00';
+  var now = Date.now();
+  var s = currentSession(now);
+
+  if (!s){                       // every session has finished
+    if (bar) bar.style.display = 'none';
     return;
   }
-  var s = Math.floor(diff / 1000);
-  elD.textContent = pad(Math.floor(s / 86400));
-  elH.textContent = pad(Math.floor(s % 86400 / 3600));
-  elM.textContent = pad(Math.floor(s % 3600 / 60));
-  elS.textContent = pad(s % 60);
+
+  if (now >= s.startMs){         // in progress
+    label.textContent = s.live;
+    clock.style.display = 'none';
+    return;
+  }
+
+  clock.style.display = '';
+  label.textContent = s.label;
+
+  var secs = Math.floor((s.startMs - now) / 1000);
+  elD.textContent = pad(Math.floor(secs / 86400));
+  elH.textContent = pad(Math.floor(secs % 86400 / 3600));
+  elM.textContent = pad(Math.floor(secs % 3600 / 60));
+  elS.textContent = pad(secs % 60);
 }
 tick();
 setInterval(tick, 1000);
 
 document.getElementById('yr').textContent = new Date().getFullYear();
 
+/* ---- Opt-in only: disable a session in the dropdowns once it starts,
+   so nobody registers for one that has already run. ---------------- */
+(function(){
+  function pruneSessions(){
+    var now = Date.now();
+    SESSIONS.forEach(function(s){
+      if (now < s.startMs) return;
+      document.querySelectorAll('select[name="tags[]"] option[value="' + s.tag + '"]')
+        .forEach(function(opt){
+          opt.disabled = true;
+          if (opt.selected) opt.parentNode.value = '';
+          if (!/ \(closed\)$/.test(opt.textContent)) opt.textContent += ' (closed)';
+        });
+    });
+  }
+  pruneSessions();
+  setInterval(pruneSessions, 60 * 1000);
+})();
+
 /* ---- Preselect a session from the URL, e.g. ?session=sept21 or ?session=sept23 ----
    Useful if you run separate ads for each time slot.             */
 var q = new URLSearchParams(location.search).get('session');
 if (q){
-  var map = { sept21:'23209526', sept23:'23209507' };
+  var map = { sept21:'23209526', sept23:'23257867' };
   var val = map[q.toLowerCase()];
   if (val){
     document.querySelectorAll('select[name="tags[]"]').forEach(function(sel){
