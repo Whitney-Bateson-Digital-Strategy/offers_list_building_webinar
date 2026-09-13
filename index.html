@@ -53,6 +53,7 @@
   --ink:        var(--text);
   --ink-soft:   #6b7278;
   --paper:      #ffffff;
+  --sky-wash:   #e4eff4;   /* soft blue section wash so white cards read as cards */
   --rule:       rgba(0,0,0,.12);
   --rule-warm:  #d3d1c7;
 
@@ -307,24 +308,28 @@ input:focus-visible, select:focus-visible, .btn:focus-visible{
 .turn{ text-align:center; margin:0 0 3rem; }
 .turn h3{
   font-family:var(--body);
-  font-size:12px; font-weight:700;
-  letter-spacing:.14em; text-transform:uppercase;
+  font-size:clamp(16px, 1.9vw, 20px); font-weight:700;
+  letter-spacing:.12em; text-transform:uppercase;
   color:var(--coral);
-  margin-bottom:1.1rem;
+  margin-bottom:1.2rem;
 }
-.turn p:first-of-type{
+.turn-lead{
   font-family:var(--display);
-  font-size:clamp(30px, 4vw, 46px);
+  font-size:clamp(27px, 3.4vw, 40px);
   font-weight:400;
   line-height:1.25;
   color:var(--teal);
-  max-width:30ch;
+  max-width:34ch;
   margin:0 auto 1.2rem;
 }
 .turn em{ font-style:italic; color:var(--coral); }
-.turn p:last-of-type{
+.turn-sub{
+  font-size:18px; line-height:1.6; color:var(--text);
+  max-width:54ch; margin:0 auto 1.1rem;
+}
+.turn-punch{
   font-size:20px; font-weight:600; color:var(--text);
-  max-width:52ch; margin:0 auto;
+  max-width:54ch; margin:0 auto;
 }
 
 /* ---------------- discover boxes ---------------- */
@@ -340,13 +345,14 @@ input:focus-visible, select:focus-visible, .btn:focus-visible{
   padding:28px 32px;
   border-top:5px solid var(--pink);
   font-size:17px;
-  box-shadow:0 2px 16px rgba(0,0,0,.06);
+  box-shadow:0 4px 22px rgba(2,82,93,.10);
 }
 .box:nth-child(2){ border-top-color:var(--peach); }
 .box:nth-child(3){ border-top-color:var(--lime); }
+.box strong{ color:var(--teal); font-weight:700; }
 
 /* ---------------- fit list ---------------- */
-.discover{ background:var(--paper) !important; }
+.discover{ background:var(--sky-wash) !important; }
 
 .fit{ background:var(--pink) !important; }
 .fit h2{ text-align:center; max-width:20ch; margin:0 auto; }
@@ -599,11 +605,12 @@ h2.pin{ max-width:24ch; }
 
     <div class="turn">
       <h3>Here's what's actually going on</h3>
-      <p>You don't have <em>an audience of the right people to sell to</em>, and you don't have anything working for you when you're not the one showing up.</p>
-      <p>Posting more, networking more, DMing more, they won't fix either one.</p>
+      <p class="turn-lead">You don't have <em>enough of the right people in your audience</em> yet. And you don't have anything consistently bringing new people in when you're not the one showing up. Right now, <em>you are the system</em>.</p>
+      <p class="turn-sub">If you're not posting, networking, sending the DMs, or putting yourself out there, nothing new comes in. Your ability to grow is capped by how much you personally have in the tank that week.</p>
+      <p class="turn-punch">So the instinct is to post more. Network more. Send more DMs. But more of you doesn't fix either problem. It's more effort, not more structure.</p>
     </div>
 
-    <p class="section-lede">In this training, I'll show you the #1 reason most practitioners never get past this, and <strong>the exact system that turns strangers into a warm, ready-to-buy list</strong>, without adding more to your to-do list.</p>
+    <p class="section-lede">In this training, I'll show you the #1 reason most practitioners get stuck here, and <strong>the exact system for getting the right people into your world, building trust, and turning that attention into a list you can actually sell to</strong>, without adding more to your to-do list.</p>
   </div>
 </section>
 
@@ -660,9 +667,9 @@ h2.pin{ max-width:24ch; }
   <div class="shell">
     <h2 class="teal-h2 pin">In this live training, you'll discover</h2>
     <div class="boxes">
-      <div class="box">Why social media and referrals cap your growth, and what to build instead so people find you, whether you're posting on Insta or avoiding it like the plague.</div>
-      <div class="box">The one thing that makes most list-building systems fail before they bring in a single potential client. Most practitioners think it's the tech, but that has nothing to do with it. I'll show you the real culprit and what to do instead.</div>
-      <div class="box">Why even a perfectly positioned lead magnet still won't bring you clients on its own, and why so few practitioners ever finish putting the rest of the system in place.</div>
+      <div class="box">Why social media and referrals alone <strong>won't bring you consistent leads</strong>, and what to build instead so people find you whether you're posting on Insta or avoiding it like the plague.</div>
+      <div class="box">The <strong>number one mistake wellness pros make when setting up an opt-in</strong>, the one that leaves you collecting email addresses that never turn into a booked call. Most think it's the tech. <strong>It happens way before that.</strong></div>
+      <div class="box">The exact system that <strong>turns strangers into a warm, ready-to-book list</strong> without you doing more work.</div>
     </div>
   </div>
 </section>
@@ -688,9 +695,9 @@ h2.pin{ max-width:24ch; }
   <div class="shell bonus-grid">
     <div class="bonus-copy">
       <p class="script">Live attendees only</p>
-      <h2>Come live and I'll hand you the tool that <em>turns your email list into booked calls</em></h2>
+      <h2>Come live and I'll hand you the tool that <em>turns your email list into booked calls</em>, and you can use it the same day</h2>
       <p>If you've ever avoided sending an email to your list because you didn't know what to say, or avoided promoting your services or programs in your emails because it felt awkward, this solves both.</p>
-      <p>It helps you create an endless supply of email topics straight from your own offers and services, not some generic list, then guides you into turning each one into an authentic email that gets people to learn more, book a call, or take the next step.</p>
+      <p>It helps you create an endless supply of email topics straight from your own offers and services, not some generic list, then guides you into turning each one into an authentic email that gets people to learn more, book a call, or take the next step. No setup, no new software, nothing to learn first. You could write and send your first one tonight.</p>
       <p class="live-note">Normally only for my paid funnel and ad clients. Free for everyone who attends live.</p>
     </div>
 
