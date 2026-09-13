@@ -54,6 +54,7 @@
   --ink-soft:   #6b7278;
   --paper:      #ffffff;
   --sky-wash:   #e4eff4;   /* soft blue section wash so white cards read as cards */
+  --copy-col:   680px;     /* problem-section body column, shared by the form below it */
   --rule:       rgba(0,0,0,.12);
   --rule-warm:  #d3d1c7;
 
@@ -305,7 +306,7 @@ input:focus-visible, select:focus-visible, .btn:focus-visible{
 }
 .maybe li:last-child{ margin-bottom:0; }
 
-.turn{ text-align:center; margin:0 0 2.6rem; }
+.turn{ text-align:center; margin:0 0 1.35rem; }
 .turn h3{
   font-family:var(--body);
   font-size:clamp(16px, 1.9vw, 20px); font-weight:700;
@@ -329,7 +330,7 @@ input:focus-visible, select:focus-visible, .btn:focus-visible{
 /* Body copy sits in its own narrow, left-aligned column so it stops
    competing with the centred headline above it. */
 .turn-body{
-  max-width:660px;
+  max-width:var(--copy-col);
   margin-inline:auto;
   text-align:left;
 }
@@ -341,7 +342,7 @@ input:focus-visible, select:focus-visible, .btn:focus-visible{
 /* The reframe. Spacing and weight do the work here, no box or rule. */
 .turn-reframe{ margin:2.5rem 0 0; }
 .reframe-setup{
-  font-size:18px; line-height:1.65; color:var(--ink-soft);
+  font-size:18px; line-height:1.65; color:var(--text);
   margin:0 0 .45rem;
 }
 .reframe-turn{
@@ -352,7 +353,7 @@ input:focus-visible, select:focus-visible, .btn:focus-visible{
 /* The webinar promise, held well clear of the explanation above it. */
 .turn-promise{ margin-top:3.25rem; }
 .lede-kicker{
-  font-size:19px; line-height:1.5; font-weight:700; color:var(--teal);
+  font-size:19px; line-height:1.5; font-weight:600; color:var(--teal);
   margin:.45rem 0 0;
 }
 @media (max-width:768px){
@@ -523,6 +524,9 @@ footer a{ color:rgba(255,255,255,.5); }
   color:var(--text);
 }
 .section-lede strong{ font-weight:700; }
+/* The first CTA sits directly under the problem copy, so it shares that
+   column's measure instead of the narrower width the other forms use. */
+.band-tight .card{ max-width:var(--copy-col); }
 .turn-body .section-lede{
   max-width:none; margin:0;
   text-align:left; font-size:19px;
