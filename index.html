@@ -54,6 +54,7 @@
   --ink-soft:   #6b7278;
   --paper:      #ffffff;
   --sky-wash:   #e4eff4;   /* soft blue section wash so white cards read as cards */
+  --copy-col:   680px;     /* problem-section body column, shared by the form below it */
   --rule:       rgba(0,0,0,.12);
   --rule-warm:  #d3d1c7;
 
@@ -305,13 +306,14 @@ input:focus-visible, select:focus-visible, .btn:focus-visible{
 }
 .maybe li:last-child{ margin-bottom:0; }
 
-.turn{ text-align:center; margin:0 0 3rem; }
+.turn{ text-align:center; margin:0 0 1.35rem; }
 .turn h3{
   font-family:var(--body);
   font-size:clamp(16px, 1.9vw, 20px); font-weight:700;
   letter-spacing:.12em; text-transform:uppercase;
   color:var(--coral);
   margin-bottom:1.2rem;
+  text-wrap:balance;      /* stops "GOING ON" stranding on its own line */
 }
 .turn-lead{
   font-family:var(--display);
@@ -320,16 +322,45 @@ input:focus-visible, select:focus-visible, .btn:focus-visible{
   line-height:1.25;
   color:var(--teal);
   max-width:34ch;
-  margin:0 auto 1.2rem;
+  margin:0 auto;
+  text-wrap:pretty;       /* keeps the headline off awkward one-word last lines */
 }
 .turn em{ font-style:italic; color:var(--coral); }
-.turn-sub{
-  font-size:18px; line-height:1.6; color:var(--text);
-  max-width:54ch; margin:0 auto 1.1rem;
+
+/* Body copy sits in its own narrow, left-aligned column so it stops
+   competing with the centred headline above it. */
+.turn-body{
+  max-width:var(--copy-col);
+  margin-inline:auto;
+  text-align:left;
 }
-.turn-punch{
-  font-size:20px; font-weight:600; color:var(--text);
-  max-width:54ch; margin:0 auto;
+.turn-sub{
+  font-size:18px; line-height:1.65; color:var(--text);
+  margin:0;
+}
+
+/* The reframe. Spacing and weight do the work here, no box or rule. */
+.turn-reframe{ margin:2.5rem 0 0; }
+.reframe-setup{
+  font-size:18px; line-height:1.65; color:var(--text);
+  margin:0 0 .45rem;
+}
+.reframe-turn{
+  font-size:21px; line-height:1.45; font-weight:700; color:var(--text);
+  margin:0;
+}
+
+/* The webinar promise, held well clear of the explanation above it. */
+.turn-promise{ margin-top:3.25rem; }
+.lede-kicker{
+  font-size:19px; line-height:1.5; font-weight:600; color:var(--teal);
+  margin:.45rem 0 0;
+}
+@media (max-width:768px){
+  .turn h3{ letter-spacing:.08em; }
+  .turn-reframe{ margin-top:2.1rem; }
+  .turn-promise{ margin-top:2.6rem; }
+  .reframe-turn{ font-size:20px; }
 }
 
 /* ---------------- discover boxes ---------------- */
@@ -493,6 +524,13 @@ footer a{ color:rgba(255,255,255,.5); }
   color:var(--text);
 }
 .section-lede strong{ font-weight:700; }
+/* The first CTA sits directly under the problem copy, so it shares that
+   column's measure instead of the narrower width the other forms use. */
+.band-tight .card{ max-width:var(--copy-col); }
+.turn-body .section-lede{
+  max-width:none; margin:0;
+  text-align:left; font-size:19px;
+}
 h2.pin{ max-width:24ch; }
 .teal-h2{ color:var(--teal); }
 </style>
@@ -606,11 +644,21 @@ h2.pin{ max-width:24ch; }
     <div class="turn">
       <h3>Here's what's actually going on</h3>
       <p class="turn-lead">You don't have <em>enough of the right people in your audience</em> yet. And you don't have anything consistently bringing new people in when you're not the one showing up. Right now, <em>you are the system</em>.</p>
-      <p class="turn-sub">If you're not posting, networking, sending the DMs, or putting yourself out there, nothing new comes in. Your ability to grow is capped by how much you personally have in the tank that week.</p>
-      <p class="turn-punch">So the instinct is to post more. Network more. Send more DMs. But more of you doesn't fix either problem. It's more effort, not more structure.</p>
     </div>
 
-    <p class="section-lede">In this training, I'll show you the #1 reason most practitioners get stuck here, and <strong>the exact system for getting the right people into your world, building trust, and turning that attention into a list you can actually sell to</strong>, without adding more to your to-do list.</p>
+    <div class="turn-body">
+      <p class="turn-sub">If you're not posting, networking, sending the DMs, or putting yourself out there, nothing new comes in. Your ability to grow is capped by how much you have in the tank that week.</p>
+
+      <div class="turn-reframe">
+        <p class="reframe-setup">So the instinct is to post more. Network more. Send more DMs.</p>
+        <p class="reframe-turn">But more of you doesn't fix either problem. It's more effort, not more structure.</p>
+      </div>
+
+      <div class="turn-promise">
+        <p class="section-lede">In this training, I'll show you the #1 reason most practitioners get stuck here, and <strong>the exact system for getting the right people into your world, building trust, and growing a list you can actually sell to</strong>.</p>
+        <p class="lede-kicker">Without adding more to your to-do list.</p>
+      </div>
+    </div>
   </div>
 </section>
 
