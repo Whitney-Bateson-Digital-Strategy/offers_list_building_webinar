@@ -35,8 +35,9 @@
 <style>
 :root{
   /* Whitney Bateson brand palette */
-  --cream:      #efeae3;
+  --cream:      #f5f2ec;
   --pink:       #ffcdcd;
+  --pink-wash:  #ffe6e6;   /* lighter pink for section fills; --pink stays for accents */
   --coral:      #ff7f50;
   --lime:       #e3f696;
   --sky:        #aed3dd;
@@ -353,7 +354,8 @@ input:focus-visible, select:focus-visible, .btn:focus-visible{
 /* The webinar promise, held well clear of the explanation above it. */
 .turn-promise{ margin-top:3.25rem; }
 .lede-kicker{
-  font-size:19px; line-height:1.5; font-weight:600; color:var(--teal);
+  font-size:19px; line-height:1.5; font-weight:600; color:var(--text);
+  font-style:italic;
   margin:.45rem 0 0;
 }
 @media (max-width:768px){
@@ -385,7 +387,7 @@ input:focus-visible, select:focus-visible, .btn:focus-visible{
 /* ---------------- fit list ---------------- */
 .discover{ background:var(--sky-wash) !important; }
 
-.fit{ background:var(--pink) !important; }
+.fit{ background:var(--pink-wash) !important; }
 .fit h2{ text-align:center; max-width:20ch; margin:0 auto; }
 
 .fit-list{
@@ -427,6 +429,28 @@ input:focus-visible, select:focus-visible, .btn:focus-visible{
   line-height:1.2; margin:0 0 .6rem;
   transform:rotate(-1.2deg); transform-origin:left;
 }
+.live-dot{
+  display:inline-block; vertical-align:middle;
+  position:relative;
+  width:11px; height:11px; margin:0 .5rem .18em 0;
+  border-radius:50%; background:var(--coral);
+  animation:live-blink 1.6s ease-in-out infinite;
+}
+.live-dot::after{
+  content:""; position:absolute; inset:0;
+  border-radius:50%; background:var(--coral);
+  animation:live-ring 1.6s ease-out infinite;
+}
+@keyframes live-blink{ 0%,100%{ opacity:1; } 50%{ opacity:.45; } }
+@keyframes live-ring{
+  0%{ transform:scale(1); opacity:.6; }
+  70%,100%{ transform:scale(2.6); opacity:0; }
+}
+@media (prefers-reduced-motion:reduce){
+  .live-dot,.live-dot::after{ animation:none; }
+  .live-dot::after{ display:none; }
+}
+
 .bonus-grid{
   display:grid; gap:clamp(2rem,4vw,3.5rem);
   grid-template-columns:1fr; align-items:center;
@@ -459,14 +483,36 @@ input:focus-visible, select:focus-visible, .btn:focus-visible{
 
 .bonus .live-note{
   display:inline-block; margin-top:.6rem;
-  background:var(--lime) !important; color:var(--teal-deep);
+  background:transparent !important; color:var(--lime);
+  border:1.5px solid rgba(227,246,150,.65);
   font-weight:600; font-size:15px;
-  padding:12px 22px; border-radius:50px;
+  padding:11px 18px; border-radius:6px;
 }
 
 /* ---------------- host ---------------- */
 .host-grid{ display:grid; gap:clamp(1.8rem,4vw,3rem); grid-template-columns:1fr; align-items:start; }
 @media (min-width:860px){ .host-grid{ grid-template-columns:320px 1fr; } }
+/* Rotating badge, sitting over the corner of the photo. The photo itself
+   clips its own overflow, so the badge is a sibling, not a child. */
+.host-photo-wrap{ position:relative; }
+.host-badge{
+  position:absolute; right:-16px; bottom:-16px;
+  width:124px; height:124px;
+  animation:host-badge-spin 20s linear infinite;
+}
+.host-badge circle{ fill:var(--teal); }
+.host-badge text{
+  fill:var(--lime);
+  font-family:var(--body);
+  font-size:11px; font-weight:700; letter-spacing:.06em;
+}
+@keyframes host-badge-spin{ to{ transform:rotate(360deg); } }
+@media (prefers-reduced-motion:reduce){ .host-badge{ animation:none; } }
+@media (max-width:640px){
+  .host-badge{ width:96px; height:96px; right:-8px; bottom:-8px; }
+  .host-badge text{ font-size:12px; }
+}
+
 .host-photo{
   border-radius:20px; overflow:hidden;
   background:var(--sky) !important;
@@ -715,8 +761,8 @@ h2.pin{ max-width:24ch; }
   <div class="shell">
     <h2 class="teal-h2 pin">In this live training, you'll discover</h2>
     <div class="boxes">
-      <div class="box">Why social media and referrals alone <strong>won't bring you consistent leads</strong>, and what to build instead so people find you whether you're posting on Insta or avoiding it like the plague.</div>
-      <div class="box">The <strong>number one mistake wellness pros make when setting up an opt-in</strong>, the one that leaves you collecting email addresses that never turn into a booked call. Most think it's the tech. <strong>It happens way before that.</strong></div>
+      <div class="box">Why <strong>social media and referrals alone won't bring you consistent leads</strong>, and what to build instead so people find you whether you're posting on Insta or avoiding it like the plague.</div>
+      <div class="box">The <strong>number one mistake practitioners make when setting up an opt-in</strong>, the one that leaves you collecting email addresses that never turn into a booked call.</div>
       <div class="box">The exact system that <strong>turns strangers into a warm, ready-to-book list</strong> without you doing more work.</div>
     </div>
   </div>
@@ -742,7 +788,7 @@ h2.pin{ max-width:24ch; }
 <section class="bonus">
   <div class="shell bonus-grid">
     <div class="bonus-copy">
-      <p class="script">Live attendees only</p>
+      <p class="script"><span class="live-dot" aria-hidden="true"></span>Live attendees only</p>
       <h2>Come live and I'll hand you the tool that <em>turns your email list into booked calls</em>, and you can use it the same day</h2>
       <p>If you've ever avoided sending an email to your list because you didn't know what to say, or avoided promoting your services or programs in your emails because it felt awkward, this solves both.</p>
       <p>It helps you create an endless supply of email topics straight from your own offers and services, not some generic list, then guides you into turning each one into an authentic email that gets people to learn more, book a call, or take the next step. No setup, no new software, nothing to learn first. You could write and send your first one tonight.</p>
@@ -804,14 +850,26 @@ h2.pin{ max-width:24ch; }
 <!-- ============ HOST ============ -->
 <section class="host">
   <div class="shell host-grid">
-    <div class="host-photo">
-      <img src="whitney.jpg" alt="Whitney Bateson" width="1200" height="1500" loading="lazy">
+    <div class="host-photo-wrap">
+      <div class="host-photo">
+        <img src="whitney.jpg" alt="Whitney Bateson" width="1200" height="1500" loading="lazy">
+      </div>
+      <svg class="host-badge" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
+        <defs>
+          <path id="host-badge-arc"
+                d="M60,60 m-45,0 a45,45 0 1,1 90,0 a45,45 0 1,1 -90,0"></path>
+        </defs>
+        <circle cx="60" cy="60" r="60"></circle>
+        <text>
+          <textPath href="#host-badge-arc" startOffset="0" textLength="282" lengthAdjust="spacing">YOUR HOST, WHITNEY &#8226; YOUR HOST, WHITNEY &#8226;</textPath>
+        </text>
+      </svg>
     </div>
     <div>
       <p class="eyebrow">Hosted by</p>
       <h2>Whitney Bateson</h2>
       <p class="host-role">Dietitian-turned-marketer</p>
-      <p>I've watched caring, thoughtful clinicians get pushed into tactics that don't align with their values and are exhausting to keep up with. Honestly, trying to survive on social media right now is hard.</p>
+      <p>I created this training because I've watched caring, thoughtful clinicians get pushed into tactics that don't align with their values and are exhausting to keep up with. Honestly, trying to survive on social media right now is hard.</p>
       <p>Since 2018 I've built websites, funnels, and email systems for dietitians, therapists, and health practitioners, so I've had a front row seat to what actually brings practitioners clients, across dozens of businesses, not just my own.</p>
       <p>This is the same system I run in my own business today, bringing in the right people whether I've posted that week or not, so I can actually be present with my clients, my health, and my life instead of feeding an algorithm every day.</p>
     </div>
